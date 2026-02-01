@@ -23,7 +23,6 @@ app.add_middleware(
 def read_root():
     return {'Ping': 'Pong'}
 
-
 # Airtable
 @app.post('/integrations/airtable/authorize')
 async def authorize_airtable_integration(user_id: str = Form(...), org_id: str = Form(...)):
@@ -40,7 +39,6 @@ async def get_airtable_credentials_integration(user_id: str = Form(...), org_id:
 @app.post('/integrations/airtable/load')
 async def get_airtable_items(credentials: str = Form(...)):
     return await get_items_airtable(credentials)
-
 
 # Notion
 @app.post('/integrations/notion/authorize')
@@ -72,6 +70,10 @@ async def oauth2callback_hubspot_integration(request: Request):
 async def get_hubspot_credentials_integration(user_id: str = Form(...), org_id: str = Form(...)):
     return await get_hubspot_credentials(user_id, org_id)
 
-@app.post('/integrations/hubspot/get_hubspot_items')
-async def load_slack_data_integration(credentials: str = Form(...)):
+@app.post('/integrations/hubspot/load')
+async def get_hubspot_items_integration(credentials: str = Form(...)):
     return await get_items_hubspot(credentials)
+
+@app.post('/integrations/undefined/load')
+async def get_undefined_items(credentials: str = Form(...)):
+    return await get_items_hubspot(credentials)    
