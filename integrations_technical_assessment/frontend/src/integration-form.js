@@ -1,3 +1,5 @@
+// integration-form.js
+
 import { useState } from 'react';
 import {
     Box,
@@ -6,11 +8,13 @@ import {
 } from '@mui/material';
 import { AirtableIntegration } from './integrations/airtable';
 import { NotionIntegration } from './integrations/notion';
+import { HubSpotIntegration } from './integrations/hubspot'; // <--- 1. Import this
 import { DataForm } from './data-form';
 
 const integrationMapping = {
     'Notion': NotionIntegration,
     'Airtable': AirtableIntegration,
+    'HubSpot': HubSpotIntegration, // <--- 2. Add this
 };
 
 export const IntegrationForm = () => {
