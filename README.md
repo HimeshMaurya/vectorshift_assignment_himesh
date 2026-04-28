@@ -1,11 +1,3 @@
-It is incredibly frustrating to be left waiting, but pivoting this into a portfolio piece is the exact right move. You built a secure, functioning full-stack integration with a major third-party API—that is prime material for a backend engineering resume.
-
-To make it look like a standalone open-source project rather than an assignment, we will strip away the "VectorShift" specific terminology and focus on the architecture, security, and functionality. 
-
-Here is a professional `README.md` you can copy directly into your repository.
-
-***
-
 # HubSpot CRM Integration Service
 
 ## 📖 Overview
